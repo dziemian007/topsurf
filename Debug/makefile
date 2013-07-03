@@ -43,25 +43,22 @@ endif
 
 -include ../makefile.defs
 
-# Add inputs and outputs from these tool invocations to the build variables
+# Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: topsurf
+all: libtopsurf.so
 
 # Tool invocations
-topsurf: $(OBJS) $(USER_OBJS)
+libtopsurf.so: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-
-# disable linking
-#	g++  -o "topsurf" $(OBJS) $(USER_OBJS) $(LIBS)
-
+	g++ -shared -o "libtopsurf.so" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) topsurf
+	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(LIBRARIES)$(CPP_DEPS)$(CXX_DEPS)$(C_UPPER_DEPS) libtopsurf.so
 	-@echo ' '
 
 .PHONY: all clean dependents
