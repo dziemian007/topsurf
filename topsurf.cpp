@@ -24,6 +24,8 @@
 
 #include "dictionary.h"
 
+#include "unistd.h"
+
 TopSurf::TopSurf(int imagedim, int top)
 {
 	m_initialized = false;

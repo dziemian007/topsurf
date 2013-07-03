@@ -23,6 +23,7 @@
 #include "config.h"
 
 #include <stdarg.h>
+#include <unistd.h>
 
 // safe print string
 void SAFE_SPRINTF(char *buffer, size_t count, const char *format, ...)

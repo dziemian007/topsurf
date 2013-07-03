@@ -46,9 +46,7 @@
 # include <fcntl.h>
 #endif
 
-#ifdef HAVE_IO_H
-# include <io.h>
-#endif
+#include <sys/io.h>
 
 #include "tiffiop.h"
 

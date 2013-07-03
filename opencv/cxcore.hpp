@@ -44,6 +44,7 @@
 #define _CXCORE_HPP_
 
 #include "cxmisc.h"
+#include "stddef.h"
 
 #ifdef __cplusplus
 
