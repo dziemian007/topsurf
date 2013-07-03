@@ -1,0 +1,32 @@
+The TOP-SURF descriptor is completely open source. Note that the libraries
+it depends on use different licenses that are compatible with each other.
+
+OpenSURF
+released under the GNU GPL version 3 license
+(http://www.gnu.org/licenses/gpl.html)
+
+OpenCV 2.0.0
+released under the BSD license
+("the new 3-clause version")
+
+FLANN 1.2
+released under the BSD license
+("the simplified 2-clause version")
+
+LIBJPEG 8c
+released under the libjpeg license
+
+LIBTIFF 3.9.4
+released under the libtiff license
+
+LIBPNG 1.5.1
+released under the libpng license
+
+ZLIB 1.2.5
+released under the zlib license
+
+TOP-SURF
+released under the GNU GPL version 3 license
+(http://www.gnu.org/licenses/gpl.html)
+and under the Creative Commons Attribution version 3 license
+(http://creativecommons.org/licenses/by/3.0/)
