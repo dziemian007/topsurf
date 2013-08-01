@@ -341,6 +341,37 @@ bool TopSurf_VisualizeDescriptor(unsigned char *pixels, int dimx, int dimy, cons
 	return TopSurf_VisualizeDescriptor(pixels, dimx, dimy, td);
 }
 
+bool TopSurf_VisualizeDescriptorFromImage(const char *fname, const char *xname, TOPSURF_DESCRIPTOR &td)
+{
+	if (fname == NULL)
+	{
+		SAFE_FLUSHPRINT(stderr, "invalid image data provided\n");
+		return false;
+	}
+
+	IplImage *image = cvLoadImage(fname);
+	if (image == NULL)
+	{
+		SAFE_FLUSHPRINT(stderr, "could not convert image data\n");
+		return false;
+	}
+
+	// visualize the descriptor
+	TopSurf::VisualizeDescriptor(*image, td);
+
+  // save image to file
+	int p[3];
+	p[0] = CV_IMWRITE_JPEG_QUALITY;
+  p[1] = 100;
+	p[2] = 0;
+	cvSaveImage(xname, image, p);
+
+	// release resources
+  cvReleaseImage(&image);
+
+	return true;
+}
+
 void TopSurf_ReleaseDescriptor(TOPSURF_DESCRIPTOR &td)
 {
 	TopSurf::ReleaseDescriptor(td);

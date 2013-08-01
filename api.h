@@ -173,6 +173,7 @@ bool DLLAPI TopSurf_SaveDescriptor(FILE *file, const unsigned char *data);
 // Note: TopSurf_Initialized does not have to be called in order to use this function.
 bool DLLAPI TopSurf_VisualizeDescriptor(unsigned char *pixels, int dimx, int dimy, TOPSURF_DESCRIPTOR &td);
 bool DLLAPI TopSurf_VisualizeDescriptor(unsigned char *pixels, int dimx, int dimy, const unsigned char *data);
+bool DLLAPI TopSurf_VisualizeDescriptorFromImage(const char *fname, const char *xname, TOPSURF_DESCRIPTOR &td);
 
 // release the memory used by a descriptor
 // td, data = a descriptor that has previously been returned by TopSurf_ExtractDescriptor
